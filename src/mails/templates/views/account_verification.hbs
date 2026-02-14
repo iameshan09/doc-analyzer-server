@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+    {{>header}}
+    <div
+        style="max-width: 600px; margin: 2rem auto; background: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); overflow: hidden;">
+        <div style="padding: 2rem; min-height: 400px;">
+            <h2
+                style="color: #171717; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid #fba414; display: inline-block;">
+                Verify your account to get started</h2>
+            <p>Hi {{recipient}},</p>
+            <p style="text-align: justify;">To complete your registration and activate your account, please verify your email address by clicking the button below.</p>
+            <p>This helps us confirm it's really you and keeps your account secure.</p>
+            <div style="text-align: center;">
+                <a href={{{href}}}
+                    style="display: inline-flex; align-items: center; padding: 0.75rem 1.5rem; background: #fba414; color: white !important; text-decoration: none; border-radius: 6px; font-weight: 600; margin: 1.5rem 0;">
+                    Verify My Account
+                </a>
+            </div>
+            <p>We look forward to working with you!</p>
+            <p style="margin: 0;">Warm regards,</p>
+            <p style="margin: 0;">{{from}}</p>
+        </div>
+    </div>
+    {{>footer}}
+</body>

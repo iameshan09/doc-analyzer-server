@@ -9,21 +9,19 @@ import validationSchema from './config/validation.schema';
 import { BullModule } from '@nestjs/bull';
 import sharedBullAsyncConfiguration from './config/shared-bull-async-config';
 import { HttpErrorFilter } from './common/filters/http-error.filter';
-import { DebugModule } from './debug/debug.module';
-import { FileUploadModule } from './file-upload/file-upload.module';
 import { UserAccountModule } from './user-account/user-account.module';
 import CustomJwtGuard from './auth/guards/custom-jwt.guard';
 import { JwtModule } from '@nestjs/jwt';
 import { jwtModuleAsyncOptions } from './config/jwt.config';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { mailerAsyncOptions } from './config/mailer.config';
-import { LandingPageModule } from './landing-page/landing-page.module';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { throttlerAsyncOptions } from './config/throttler.config';
 import { CacheModule } from '@nestjs/cache-manager';
 import { cacheModuleAsyncOptions } from './config/cache.config';
 import { AppLoggerMiddleware } from './common/middleware/logger.middleware';
 import { AdminAccountModule } from './admin-account/admin-account.module';
+import { AnalysisModule } from './analysis/analysis.module';
 
 @Module({
   imports: [
@@ -34,16 +32,14 @@ import { AdminAccountModule } from './admin-account/admin-account.module';
     MongooseModule.forRootAsync(mongooseModuleAsyncOptions),
     BullModule.forRootAsync(sharedBullAsyncConfiguration),
     JwtModule.registerAsync(jwtModuleAsyncOptions),
-    MailerModule.forRootAsync(mailerAsyncOptions),
+    //MailerModule.forRootAsync(mailerAsyncOptions),
     ThrottlerModule.forRootAsync(throttlerAsyncOptions),
     CacheModule.registerAsync(cacheModuleAsyncOptions),
     CommonModule,
     AuthModule,
-    DebugModule,
-    FileUploadModule,
     UserAccountModule,
-    LandingPageModule,
     AdminAccountModule,
+    AnalysisModule,
   ],
   controllers: [],
   providers: [

@@ -30,29 +30,24 @@ import AdminAccountHelperService from './services/admin-account.helper.service';
       { name: UserSession.name, schema: UserSessionSchema },
       { name: AdminAccount.name, schema: AdminAccountSchema },
     ]),
-    BullModule.registerQueueAsync(
-      {
-        name: APP_QUEUE_NAMES.googlePlaceImageExtractQ,
-      },
-      {
-        name: APP_QUEUE_NAMES.mailerQ,
-      },
-    ),
+    BullModule.registerQueueAsync({
+      name: APP_QUEUE_NAMES.mailerQ,
+    }),
   ],
   controllers: [],
   providers: [
-    S3Service,
+    //S3Service,
     WinstonLoggerService,
     FileUploadLogService,
     CryptoService,
     UserAccountHelperService,
     UserSessionHelperService,
-    MailerProcessor,
+    //MailerProcessor,
     AdminAccountHelperService,
   ],
   exports: [
     MongooseModule,
-    S3Service,
+    //S3Service,
     BullModule,
     WinstonLoggerService,
     FileUploadLogService,
